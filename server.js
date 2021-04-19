@@ -2,6 +2,7 @@ const express = require('express')
 const cookie = require('cookie-parser')
 const Controller = require('./app/Controller/Controller')
 const Middleware = require('./app/Middleware/Middleware')
+const path = require('path')
 const app = express()
 const port = 3000
 /*
@@ -21,5 +22,11 @@ app.use(express.urlencoded())
  * by using this i can access cookies data from cookies object
  */
 app.use(cookie("DevTik_Ejadah"))
+
 app.get('/login', Controller.Auth.loginPage)
+app.post('/login', Controller.Auth.login)
+app.get('/signup', Controller.Auth.signupPage)
+app.post('/signup', Controller.Auth.signup)
+app.get('/courses', Controller)
+
 app.listen(process.env.PORT || port, () => console.log(`app listening at http://localhost:${port}`))
