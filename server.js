@@ -23,10 +23,11 @@ app.use(express.urlencoded())
  */
 app.use(cookie("DevTik_Ejadah"))
 
+app.get('/dashboard', Controller.Dashboard.dashboard)
+app.get('/dashboard/users', Controller.Dashboard.users)
 app.get('/login', Controller.Auth.loginPage)
 app.post('/login', Controller.Auth.login)
 app.get('/signup', Controller.Auth.signupPage)
 app.post('/signup', Controller.Auth.signup)
-app.get('/courses', Controller)
 
 app.listen(process.env.PORT || port, () => console.log(`app listening at http://localhost:${port}`))
