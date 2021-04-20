@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "fname": null,
+      "lname": null,
+      "email": null,
+      "password": null,
+      "phone": null,
+      "role": null,
+      "schsStatus": null,
+      "idType": null,
+      "id": null,
+      "nationality": null,
+      "dateOfBirth": null,
+      "city": null,
+      "academicQualification": null,
+      "speciality": null,
+      "address": null,
+      "workPlace": null
+    }
+  ],
+  "courses": [
+    {
+      "title": null,
+      "prefDescription": null,
+      "lessons": null,
+      "requirments": null,
+      "description": null,
+      "reviews": [
+        {
+          "userId": null,
+          "date": null,
+          "commnet": null,
+          "rate": null
+        }
+      ],
+      "seats": null,
+      "available_seats": null,
+      "numberOfSessions": null,
+      "schadule": []
+    }
+  ],
+  "enrollments": [
+    {
+      "courseId": null,
+      "userId": null,
+      "enrollmentDate": null,
+      "certificate": null,
+      "chosenSchadule": null,
+      "attendance": ["date"]
+    }
+  ],
+  "blogs": [{}]
+}
