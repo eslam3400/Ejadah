@@ -6,7 +6,6 @@ let loginPage = (req, res) => {
 
 let login = (req, res) => {
   new UserModel().getOne({ feild: "email", operator: "==", value: req.body.email }, (userId, user) => {
-    console.log(user)
     if (user == null)
       res.render('login', { message: "loginError" })
     else if (req.body.password == user.password)
@@ -21,8 +20,10 @@ let signupPage = (req, res) => {
 }
 
 let signup = (req, res) => {
-  let user = req.body
-  new UserModel().add({ user })
+  new UserModel().getOne({ feild: 'email', operator: '==', value: req.body.email }, (docId, data) => {
+    if (data) res.redirect("/signup")
+    else new UserModel().add(req.body, () => res.redirect("/login"))
+  })
 }
 
 let logout = (req, res) => {
