@@ -19,14 +19,14 @@ let enroll = (req, res) => {
 }
 
 // new User().update('KadAKo29tpcgizZT3qea', { comment: null })
-new User().getOneByDocId('TplffMGnSGFCPljZ12t9', (data) => {
-  data.enrollments.push({
-    courseId: "1",
-    enrollmentDate: new Date(),
-    certificate: null,
-    chosenSchadule: null,
-    attendance: []
-  })
-  new User().update('TplffMGnSGFCPljZ12t9', data)
-})
+// new User().getOneByDocId('TplffMGnSGFCPljZ12t9', (data) => {
+//   data.enrollments.push({
+//     courseId: "1",
+//     enrollmentDate: new Date(),
+//     certificate: null,
+//     chosenSchadule: null,
+//     attendance: []
+//   })
+//   new User().update('TplffMGnSGFCPljZ12t9', data)
+// })
 module.exports = { courses }
