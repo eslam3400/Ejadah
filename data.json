@@ -16,7 +16,16 @@
       "academicQualification": null,
       "speciality": null,
       "address": null,
-      "workPlace": null
+      "workPlace": null,
+      "enrollments": [
+        {
+          "courseId": null,
+          "enrollmentDate": null,
+          "certificate": null,
+          "chosenSchadule": null,
+          "attendance": ["date"]
+        }
+      ]
     }
   ],
   "courses": [
@@ -38,16 +47,6 @@
       "available_seats": null,
       "numberOfSessions": null,
       "schadule": []
-    }
-  ],
-  "enrollments": [
-    {
-      "courseId": null,
-      "userId": null,
-      "enrollmentDate": null,
-      "certificate": null,
-      "chosenSchadule": null,
-      "attendance": ["date"]
     }
   ],
   "blogs": [
