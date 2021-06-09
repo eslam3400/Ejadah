@@ -20,9 +20,28 @@ let signupPage = (req, res) => {
 }
 
 let signup = (req, res) => {
+  let user = {
+    "fname": null,
+    "lname": null,
+    "email": null,
+    "password": null,
+    "phone": null,
+    "role": null,
+    "schsStatus": null,
+    "idType": null,
+    "id": null,
+    "nationality": null,
+    "dateOfBirth": null,
+    "city": null,
+    "academicQualification": null,
+    "speciality": null,
+    "address": null,
+    "workPlace": null,
+    "enrollments": []
+  }
   new UserModel().getOne({ feild: 'email', operator: '==', value: req.body.email }, (docId, data) => {
     if (data) res.redirect("/signup")
-    else new UserModel().add(req.body, () => res.redirect("/login"))
+    else new UserModel().add(user, () => res.redirect("/login"))
   })
 }
 

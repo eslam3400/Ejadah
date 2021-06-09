@@ -1,9 +1,35 @@
 const CourseModel = require('../Model/Course')
 const User = require('../Model/User')
 
-let courses = (req, res) => new CourseModel().getAll(null, courses => res.render('courses', { courses }))
+let courses = (req, res) => new CourseModel().getAll(null, coursesData => res.render('courses', { courses: coursesData }))
 
-let addCourse = (req, res) => new CourseModel().add(req.body, () => res.render(''))
+let addCourse = (req, res) => {
+  let course = {
+    "title": null,
+    "prefDescription": null,
+    "lessons": null,
+    "requirments": null,
+    "description": null,
+    "reviews": [],
+    "seats": null,
+    "available_seats": null,
+    "numberOfSessions": null,
+    "schadule": []
+  }
+  new CourseModel().add(course, () => res.render(''))
+}
+
+let addCourseReview = () => {
+  new CourseModel().getOneByDocId(req.cookies.token, (data) => {
+    data.reviews.push({
+      "userId": null,
+      "date": null,
+      "commnet": null,
+      "rate": null
+    })
+    new CourseModel().update(req.cookies.token, data, () => res.redirect('/'))
+  })
+}
 
 let enroll = (req, res) => {
   new User().getOneByDocId(req.cookies.token, (data) => {
