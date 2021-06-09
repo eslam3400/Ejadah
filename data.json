@@ -50,5 +50,19 @@
       "attendance": ["date"]
     }
   ],
-  "blogs": [{}]
+  "blogs": [
+    {
+      "title": null,
+      "date": null,
+      "pic": null,
+      "content": null,
+      "comments": [
+        {
+          "date": null,
+          "userId": null,
+          "content": null
+        }
+      ]
+    }
+  ]
 }
